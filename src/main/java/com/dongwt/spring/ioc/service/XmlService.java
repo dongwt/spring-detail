@@ -2,13 +2,14 @@ package com.dongwt.spring.ioc.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
 import com.dongwt.spring.ioc.bean.User;
 
-@Service
+
 public class XmlService {
 
 	private String name;
@@ -17,6 +18,7 @@ public class XmlService {
 	private Map<String, String> maps;
 	private Set<String> sets;
 	private List<String> lists;
+	private Properties properties;
 
 	public XmlService() {
 	}
@@ -78,6 +80,16 @@ public class XmlService {
 	public void setLists(List<String> lists) {
 		this.lists = lists;
 	}
+	
+	
+
+	public Properties getProperties() {
+		return properties;
+	}
+
+	public void setProperties(Properties properties) {
+		this.properties = properties;
+	}
 
 	public void init() {
 		System.out.println("init");
@@ -89,7 +101,8 @@ public class XmlService {
 
 	@Override
 	public String toString() {
-		return "name: " + this.name + " age: " + this.age + "\r\n" + "user: " + this.user + "\r\n" + "maps: " + maps + "\r\n" + "sets:" + sets + "\r\n" + "lists:" + lists;
+		return "name: " + this.name + " age: " + this.age + "\r\n" + "user: " + this.user + "\r\n" 
+	+ "maps: " + maps + "\r\n" + "sets:" + sets + "\r\n" + "lists:" + lists + "\r\n" + "properties:" + properties;
 	}
 
 }

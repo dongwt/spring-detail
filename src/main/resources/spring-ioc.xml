@@ -9,10 +9,10 @@
       http://www.springframework.org/schema/util 
       http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
-	<!--读取单个配置文件 
-	<util:properties id="settings" location="classpath:conf.properties" /> -->
+	<!--读取单个配置文件 <util:properties id="settings" location="classpath:conf.properties" 
+		/> -->
 
-<!-- 读取多个配置文件 -->
+	<!-- 读取多个配置文件 -->
 	<bean id="settings"
 		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="locations">
@@ -41,7 +41,7 @@
 
 	<bean id="xmlService" class="com.dongwt.spring.ioc.service.XmlService"
 		lazy-init="true" init-method="init" destroy-method="destory" scope="singleton">
-		<property name="name" value="tom"></property>
+		<property name="name" ><null/></property>
 		<property name="age" value="18"></property>
 		<property name="user" ref="user"></property>
 		<property name="sets">
@@ -63,6 +63,12 @@
 				<entry key="name" value="tom"></entry>
 				<entry key="age" value="18"></entry>
 			</map>
+		</property>
+		<property name="properties">
+			<props>
+			<prop key="name" >nb</prop>
+			<prop key="age" >18</prop>
+			</props>
 		</property>
 	</bean>
 
