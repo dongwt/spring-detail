@@ -13,10 +13,11 @@ public class UserService {
 	@Autowired
 	private UserDao userdao;
 
-	@Value("#{settings['userName']}")
+//	@Value("#{settings['userName']}")
+	@Value("${userName}")
 	private String userName;
 	
-	@Value("#{settings['dbName']}")
+//	@Value("#{settings['dbName']}")
 	private String dbName;
 
 	public void saveUser(User user) {

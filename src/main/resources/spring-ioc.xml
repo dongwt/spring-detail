@@ -11,8 +11,10 @@
 
 	<!--读取单个配置文件 <util:properties id="settings" location="classpath:conf.properties" 
 		/> -->
+		
+		<context:property-placeholder location="classpath:conf.properties"/>
 
-	<!-- 读取多个配置文件 -->
+	<!-- 读取多个配置文件 
 	<bean id="settings"
 		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="locations">
@@ -21,7 +23,7 @@
 				<value>classpath:db.properties</value>
 			</list>
 		</property>
-	</bean>
+	</bean>-->
 
 
 	<!-- 1.基于注解的配置 -->
