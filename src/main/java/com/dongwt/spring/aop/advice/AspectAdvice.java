@@ -7,12 +7,18 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.DeclareParents;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
+
+import com.dongwt.spring.aop.add.Introduce;
 
 @Component
 @Aspect
 public class AspectAdvice {
+	
+	@DeclareParents(value="com.dongwt.spring.aop.service.AspectService",defaultImpl=com.dongwt.spring.aop.add.IntroduceImpl.class)
+	public Introduce introduce;
 	
 	@Pointcut("execution(* com.dongwt.spring.aop.service.AspectService.*(..))")
 	public void AspectAdvice(){}

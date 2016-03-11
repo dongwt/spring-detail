@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.dongwt.spring.aop.add.Introduce;
 import com.dongwt.spring.aop.service.AspectService;
 import com.dongwt.spring.aop.service.XmlService;
 
@@ -20,13 +21,17 @@ public class AopTest {
 	@Test
 	public void aopXml() {
 		XmlService xmlService = (XmlService) applicationContext.getBean("xmlService");
-		xmlService.doString();
+		// xmlService.doString();
+		Introduce introduce = (Introduce) xmlService;
+		introduce.newFunction();
 	}
-	
+
 	@Test
 	public void aopAspect() {
 		AspectService aspectService = (AspectService) applicationContext.getBean("aspectService");
-		aspectService.doString();
+		// aspectService.doString();
+		Introduce introduce = (Introduce) aspectService;
+		introduce.newFunction();
 	}
 
 }

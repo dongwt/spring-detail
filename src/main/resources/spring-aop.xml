@@ -11,20 +11,25 @@
       http://www.springframework.org/schema/util/spring-util-4.0.xsd
       http://www.springframework.org/schema/aop 
       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
-      
-	<aop:aspectj-autoproxy/>
+
+	<!-- 1.注解配置 -->
+	<aop:aspectj-autoproxy />
 	<context:component-scan base-package="com.dongwt.spring.aop">
 		<context:include-filter type="regex"
 			expression="com.dongwt.spring.aop.service.XmlService" />
 	</context:component-scan>
-	
-	
-	
 
+
+
+
+	<!-- 1.xml配置 -->
 	<bean id="xmlAdvice" class="com.dongwt.spring.aop.advice.XmlAdvice"></bean>
 	<bean id="xmlService" class="com.dongwt.spring.aop.service.XmlService"></bean>
 	<aop:config>
 		<aop:aspect id="aspect" ref="xmlAdvice">
+			<aop:declare-parents types-matching="com.dongwt.spring.aop.service.XmlService"
+				implement-interface="com.dongwt.spring.aop.add.Introduce"
+				default-impl="com.dongwt.spring.aop.add.IntroduceImpl" />
 			<aop:pointcut
 				expression="execution(* com.dongwt.spring.aop.service.XmlService.*(..))"
 				id="pointcut" />
