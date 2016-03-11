@@ -22,7 +22,7 @@
 
 
 
-	<!-- 1.xml配置 -->
+	<!-- 2.xml配置 -->
 	<bean id="xmlAdvice" class="com.dongwt.spring.aop.advice.XmlAdvice"></bean>
 	<bean id="xmlService" class="com.dongwt.spring.aop.service.XmlService"></bean>
 	<aop:config>
