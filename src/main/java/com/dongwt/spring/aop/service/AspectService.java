@@ -7,7 +7,6 @@ public class AspectService {
 
 	public void doString() {
 		System.out.println("doString");
-		int result = 1/0;
 	}
 
 }

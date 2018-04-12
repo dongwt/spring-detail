@@ -34,4 +34,11 @@ public class AopTest {
 		introduce.newFunction();
 	}
 
+
+	@Test
+	public void testAspect() {
+		AspectService aspectService = (AspectService) applicationContext.getBean("aspectService");
+		aspectService.doString();
+	}
+
 }
