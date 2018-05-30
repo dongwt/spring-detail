@@ -1,5 +1,6 @@
 package com.dongwt.spring.context.test;
 
+import com.dongwt.spring.context.ContextService;
 import com.dongwt.spring.model.Person;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +28,9 @@ public class ApplicationContextTest {
 	public void newBean(){
 		Person person = (Person) applicationContext.getBean("person");
 		System.out.println(person);
+
+		ContextService contextService = (ContextService) applicationContext.getBean("contextService");
+		contextService.printObject();
 	}
 	
 
